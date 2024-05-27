@@ -1,0 +1,80 @@
+.experience_container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Ensure items stack vertically */
+  gap: 2rem;
+  height: 40vh; /* Full height to center vertically */
+  width: 80%; /* Initial width set to 80% */
+  margin: 0 auto; /* Center container */
+}
+
+.experience_container > div {
+  background: var(--color-bg-variant);
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  width: 70%; /* Ensure inner divs take full width */
+}
+
+.experience_container > div:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
+}
+
+.experience_container > div h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.experience_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  row-gap: 2rem;
+}
+
+.experience_detail {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.experience_icon {
+  margin-top: 6px;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+  .experience_container {
+    height: auto; /* Allow height to adjust to content */
+    width: 50%; /* Adjust width for medium devices */
+  }
+  .experience_container > div {
+    width: 50%; /* Ensure inner divs take full width */
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  .experience_content {
+    padding: 1rem;
+    grid-template-columns: 1fr; /* Stack items in one column */
+  }
+}
+
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+  .experience_container {
+    gap: 1rem;
+    height: auto; /* Allow height to adjust to content */
+    width: 50%; /* Adjust width for small devices */
+  }
+  .experience_container > div {
+    width: 50%; /* Ensure inner divs take full width */
+    padding: 2rem 1rem;
+  }
+}

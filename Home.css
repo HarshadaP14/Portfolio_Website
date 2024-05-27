@@ -1,0 +1,166 @@
+/* Home.css */
+header {
+  height: 100vh;
+  padding-top: 5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.home_container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+  padding: 0 2rem; /* Add padding to avoid content touching the edges */
+}
+
+.cta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* Social media icons */
+.home_social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 10rem;
+  bottom: 3rem;
+}
+.home_social a {
+  font-size: 1.5rem; /* Adjust the size as needed */
+}
+h2,
+h5 {
+  font-size: 1.5rem;
+}
+
+.home_social::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* My Image */
+.me {
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 30rem;
+  height: 25rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 3rem;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.me > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Scroll down */
+.scroll_down {
+  position: absolute;
+  bottom: 7rem;
+  right: 12rem;
+  transform: translateX(50%) rotate(90deg);
+  font-weight: 300;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  color: var(--color-primary);
+}
+
+/* Media query for large devices */
+/* Media query for large devices */
+@media screen and (min-width: calc(var(--container-width-md) + 1px)) {
+  .home_social {
+    left: 15rem;
+  }
+
+  .scroll_down {
+    right: 10rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Media query for medium devices */
+@media screen and (max-width: var(--container-width-md)) {
+  header {
+    height: 70vh; /* Increase height to ensure content fits */
+  }
+  .home_social {
+    left: 5rem; /* Adjust position for smaller screens */
+  }
+
+  .scroll_down {
+    right: 50%;
+    bottom: 5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Media query for small devices */
+@media screen and (max-width: var(--container-width-sm)) {
+  header {
+    height: 100vh;
+  }
+
+  .home_social {
+    display: none;
+  }
+
+  .me {
+    width: 18rem;
+    height: 28rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .me > img {
+    margin-top: 2.5rem;
+  }
+
+  .scroll_down {
+    right: 50%;
+    bottom: 2rem;
+    transform: translateX(50%) rotate(90deg);
+    font-size: 0.6rem;
+  }
+}
+
+/* Media query for extra small devices */
+@media screen and (max-width: 480px) {
+  header {
+    height: 100vh;
+    padding-top: 2rem;
+  }
+
+  .home_container {
+    padding: 0 1rem; /* Further reduce padding on very small screens */
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .me {
+    width: 15rem;
+    height: 25rem;
+  }
+
+  .scroll_down {
+    right: 50%;
+    bottom: 1rem;
+    font-size: 0.5rem;
+  }
+}
